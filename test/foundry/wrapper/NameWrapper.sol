@@ -16,7 +16,9 @@ import {IMetadataService} from "contracts/wrapper/IMetadataService.sol";
 
 import {ERC1155Holder } from "openzeppelin/token/ERC1155/utils/ERC1155Holder.sol";
 
-contract NameWrapperTest is Test, ERC1155Holder {
+import {ENSHelper} from "src/ENSHelper.sol";
+
+contract NameWrapperTest is Test, ENSHelper, ERC1155Holder {
 
     BaseRegistrarImplementation baseRegistrar;
     StaticMetadataService metadataService;
@@ -63,26 +65,4 @@ contract NameWrapperTest is Test, ERC1155Holder {
         baseRegistrar.setApprovalForAll(address(nameWrapper), true);
         nameWrapper.wrapETH2LD('test1', address(666), 0, address(0));
     }
-
-
-    // Helpers for namehash and labelhash
-    function namehash(string memory _name) public pure returns (bytes32 namehash) {
-        namehash = keccak256(
-            abi.encodePacked(bytes32(0), keccak256(abi.encodePacked(_name)))
-        );
-    }
-
-    function namehashEth(string memory _name) public pure returns (bytes32 namehash) {
-        namehash = keccak256(
-            abi.encodePacked(bytes32(0), keccak256(abi.encodePacked('eth')))
-        );
-        namehash = keccak256(
-            abi.encodePacked(namehash, keccak256(abi.encodePacked(_name)))
-        );
-    }
-
-    function labelhash(string memory _name) public pure returns (bytes32 labelhash) {
-        labelhash = keccak256(abi.encodePacked(_name));
-    }
-
 }
