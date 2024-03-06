@@ -10,12 +10,9 @@ import {StaticMetadataService} from "contracts/wrapper/StaticMetadataService.sol
 import {ReverseRegistrar} from "contracts/reverseRegistrar/ReverseRegistrar.sol";
 import {PublicResolver} from "contracts/resolvers/PublicResolver.sol";
 import {NameWrapper} from "contracts/wrapper/NameWrapper.sol";
-
 import {INameWrapper} from "contracts/wrapper/INameWrapper.sol";
 import {IMetadataService} from "contracts/wrapper/IMetadataService.sol";
-
 import {ERC1155Holder } from "openzeppelin/token/ERC1155/utils/ERC1155Holder.sol";
-
 import {ENSHelper} from "src/ENSHelper.sol";
 
 contract NameWrapperTest is Test, ENSHelper, ERC1155Holder {
