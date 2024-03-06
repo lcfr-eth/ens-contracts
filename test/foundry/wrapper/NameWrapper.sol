@@ -16,12 +16,12 @@ import {IMetadataService} from "contracts/wrapper/IMetadataService.sol";
 
 contract NameWrapperTest is Test {
 
-    ENSRegistry ens;
     BaseRegistrarImplementation baseRegistrar;
     StaticMetadataService metadataService;
     ReverseRegistrar reverseRegistrar;
     PublicResolver publicResolver;
     NameWrapper nameWrapper;
+    ENSRegistry ens;
 
     function setUp() public {
         bytes32 ROOT_NODE;
