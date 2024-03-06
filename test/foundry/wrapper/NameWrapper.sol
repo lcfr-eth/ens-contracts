@@ -15,8 +15,8 @@ contract NameWrapperTest is Test {
     BaseRegistrarImplementation baseRegistrar;
 
     function setUp() public {
-	ens = new ENSRegistry();
-    baseRegistrar = new BaseRegistrarImplementation(ens, 0x93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae);
+	    ens = new ENSRegistry();
+        baseRegistrar = new BaseRegistrarImplementation(ens, 0x93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae);
     }
 
     function testFunction() public {}
