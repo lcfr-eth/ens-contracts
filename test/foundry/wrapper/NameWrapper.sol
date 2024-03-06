@@ -14,7 +14,9 @@ import {NameWrapper} from "contracts/wrapper/NameWrapper.sol";
 import {INameWrapper} from "contracts/wrapper/INameWrapper.sol";
 import {IMetadataService} from "contracts/wrapper/IMetadataService.sol";
 
-contract NameWrapperTest is Test {
+import {ERC1155Holder } from "openzeppelin/token/ERC1155/utils/ERC1155Holder.sol";
+
+contract NameWrapperTest is Test, ERC1155Holder {
 
     BaseRegistrarImplementation baseRegistrar;
     StaticMetadataService metadataService;
